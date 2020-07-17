@@ -8,6 +8,9 @@ class PettingZoo:
         print(f'You have added {animal.name} the {animal.species} to {self.attraction_name}')
     def __str__(self):
         return f'{self.attraction_name} is full of {self.description}'
+    @property
+    def last_critter_added(self):
+        return (f'Our newest animal in {self.attraction_name} is {self.animals[-1].name} the {self.animals[-1].species}.')
 
 class SnakePit:
     def __init__(self, name):
@@ -19,7 +22,9 @@ class SnakePit:
         print(f'You have added {animal.name} the {animal.species} to {self.attraction_name}')
     def __str__(self):
         return f'{self.attraction_name} is full of {self.description}'
-
+    @property
+    def last_critter_added(self):
+        return (f'Our newest animal in {self.attraction_name} is {self.animals[-1].name} the {self.animals[-1].species}.')
 class Wetlands:
     def __init__(self, name):
         self.attraction_name = name
@@ -30,6 +35,16 @@ class Wetlands:
         print(f'You have added {animal.name} the {animal.species} to {self.attraction_name}')
     def __str__(self):
         return f'{self.attraction_name} is full of {self.description}'
+    @property
+    def last_critter_added(self):
+        return (f'Our newest animal in {self.attraction_name} is {self.animals[-1].name} the {self.animals[-1].species}.')
+
+
+def attraction_report (*attractions):
+    for attraction in attractions:
+        print(f'******CURRENT ANIMALS IN {attraction.attraction_name}******'.upper())
+        for animal in attraction.animals:
+            print(f'{animal.name} the {animal.species}')
 
 
 

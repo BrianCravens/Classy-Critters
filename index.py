@@ -4,7 +4,7 @@ from animals import *
 ## Create Animals ##
 ## Varmint Village ##
 frosty = Donkey("Frosty", "Donkey", "Midday", "Hay")
-rosco = Lama("Rosco", "Lama", "Morning", "Lama Chow")
+rosco = Lama("Rosco", "Lama", "Morning", "Lama Chow", 123456)
 bella = Goat("Bella", "Goat", "Evening", "GoatMeal")
 bill = Monkey("Bill", "Monkey", "Morning", "Nuts")
 nasty = Lion("Nasty", "Lion", "Midday", "Chicken")
@@ -54,5 +54,18 @@ wetlands.add_animal(cuddles)
 rosco.feed()
 frosty.feed()
 bella.feed()
+
+##Print Attraction Report##
+attraction_report(varmint_village, snake_pit, wetlands)
+
+##Test for Getter and Setter##
+rosco.chip_number = 444444
+print(rosco.chip_number)
+
+##Newest Animals##
+print(varmint_village.last_critter_added)
+print(snake_pit.last_critter_added)
+print(wetlands.last_critter_added)
+
 
 
