@@ -1,194 +1,117 @@
 from datetime import date
 
-class Lama: 
-    def __init__(self, name, species, shift, food, chip_num):
+class Animal:
+    def __init__(self, name, species, food, chip_num ):
         self.name = name
         self.species = species
-        self.shift = shift
-        self.walking = True
-        self.date_added = date.today()
         self.food = food
-        self.__chip_number = chip_num
+        self.__chip_num = chip_num
+        self.date_added = date.today()
+
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
     def __str__(self):
         return f'{self.name} is a {self.species}'
 
     @property
-    def chip_number(self):
-        return self.__chip_number
-    @chip_number.setter
-    def chip_number(self, num):
+    def chip_num(self):
+        return self.__chip_num
+    @chip_num.setter
+    def chip_num(self, chip_num):
         pass
 
-class Donkey: 
-    def __init__(self, name, species, shift, food):
-        self.name = name
-        self.species = species
+class Lama(Animal): 
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.shift = shift
         self.walking = True
-        self.date_added = date.today()
-        self.food = food
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-    def __str__(self):
-        return f'{self.name} is a {self.species}'
 
-class Goat: 
-    def __init__(self, name, species, shift, food):
-        self.name = name
-        self.species = species
+    def feed(self):
+        print(f'{self.name} was fed {self.food}, and given their antibiotic on {date.today().strftime("%m/%d/%Y")}')
+    
+
+class Donkey(Animal): 
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.shift = shift
         self.walking = True
-        self.date_added = date.today()
-        self.food = food
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-    def __str__(self):
-        return f'{self.name} is a {self.species}'
 
-class Monkey: 
-    def __init__(self, name, species, shift, food):
-        self.name = name
-        self.species = species
+    def feed(self):
+        print(f'{self.name} was fed {self.food}, and given their antibiotic on {date.today().strftime("%m/%d/%Y")}')
+
+class Goat(Animal): 
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.shift = shift
         self.walking = True
-        self.date_added = date.today()
-        self.food = food
+    
     def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-    def __str__(self):
-        return f'{self.name} is a {self.species}'
+        print(f'{self.name} was fed {self.food}, and given their antibiotic on {date.today().strftime("%m/%d/%Y")}')
 
-class Lion: 
-    def __init__(self, name, species, shift, food):
-        self.name = name
-        self.species = species
+class Monkey(Animal): 
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.shift = shift
         self.walking = True
-        self.date_added = date.today()
-        self.food = food
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-    def __str__(self):
-        return f'{self.name} is a {self.species}'
 
-class Copperhead: 
-    def __init__(self, name, species, food):
-        self.name = name
-        self.species = species
+    def feed(self):
+        print(f'{self.name} was fed {self.food}, and given their antibiotic on {date.today().strftime("%m/%d/%Y")}')
+
+class Lion(Animal): 
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
+        self.shift = shift
+        self.walking = True
+
+    def feed(self):
+        print(f'{self.name} was fed {self.food}, and given their antibiotic on {date.today().strftime("%m/%d/%Y")}')
+
+class Copperhead(Animal): 
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.date_added = date.today()
-        self.food = food
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-    def __str__(self):
-        return f'{self.name} is a {self.species}'
 
-class Rat_Snake: 
-    def __init__(self, name, species, food):
-        self.name = name
-        self.species = species
+class Rat_Snake(Animal): 
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.date_added = date.today()
-        self.food = food
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-    def __str__(self):
-        return f'{self.name} is a {self.species}'
 
-class Anaconda: 
-    def __init__(self, name, species, food):
-        self.name = name
-        self.species = species
+class Anaconda(Animal): 
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.date_added = date.today()
-        self.food = food
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-    def __str__(self):
-        return f'{self.name} is a {self.species}'
 
-class Python: 
-    def __init__(self, name, species, food):
-        self.name = name
-        self.species = species
+class Python(Animal): 
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.date_added = date.today()
-        self.food = food
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-    def __str__(self):
-        return f'{self.name} is a {self.species}'
 
-class King_Cobra: 
-    def __init__(self, name, species, food):
-        self.name = name
-        self.species = species
+class King_Cobra(Animal): 
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.date_added = date.today()
-        self.food = food
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-    def __str__(self):
-        return f'{self.name} is a {self.species}'
 
-class Catfish: 
-    def __init__(self, name, species, food):
-        self.name = name
-        self.species = species
+class Catfish(Animal): 
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.date_added = date.today()
-        self.food = food
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-    def __str__(self):
-        return f'{self.name} is a {self.species}'
 
-class Frog: 
-    def __init__(self, name, species, food):
-        self.name = name
-        self.species = species
+class Frog(Animal): 
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.date_added = date.today()
-        self.food = food
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-    def __str__(self):
-        return f'{self.name} is a {self.species}'
 
-class Mallard: 
-    def __init__(self, name, species, food):
-        self.name = name
-        self.species = species
+class Mallard(Animal): 
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.date_added = date.today()
-        self.food = food
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-    def __str__(self):
-        return f'{self.name} is a {self.species}'
 
-class Goldfish: 
-    def __init__(self, name, species, food):
-        self.name = name
-        self.species = species
+class Goldfish(Animal): 
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.date_added = date.today()
-        self.food = food
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-    def __str__(self):
-        return f'{self.name} is a {self.species}'
 
-class Alligator: 
-    def __init__(self, name, species, food):
-        self.name = name
-        self.species = species
+class Alligator(Animal): 
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.date_added = date.today()
-        self.food = food
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-    def __str__(self):
-        return f'{self.name} is a {self.species}'

@@ -3,25 +3,25 @@ from animals import *
 
 ## Create Animals ##
 ## Varmint Village ##
-frosty = Donkey("Frosty", "Donkey", "Midday", "Hay")
+frosty = Donkey("Frosty", "Donkey", "Midday", "Hay", 19378387)
 rosco = Lama("Rosco", "Lama", "Morning", "Lama Chow", 123456)
-bella = Goat("Bella", "Goat", "Evening", "GoatMeal")
-bill = Monkey("Bill", "Monkey", "Morning", "Nuts")
-nasty = Lion("Nasty", "Lion", "Midday", "Chicken")
+bella = Goat("Bella", "Goat", "Evening", "GoatMeal", 101893843)
+bill = Monkey("Bill", "Monkey", "Morning", "Nuts", 1924747)
+nasty = Lion("Nasty", "Lion", "Midday", "Chicken", 129305854)
 
 ## Snake Pit ##
-rusty = Copperhead("Rusty", "Copperhead", "Mice")
-ratty = Rat_Snake("Ratty", "Rat Snake", "Rat")
-tiny = Anaconda("Tiny", "Anaconda", "Rabbit")
-hugs = Python("Hugs", "Python", "Rabbit")
-nebuchadnezzar = King_Cobra("Nebuchadnezzar", "King Cobra", "Mice")
+rusty = Copperhead("Rusty", "Copperhead", "Mice", 1212)
+ratty = Rat_Snake("Ratty", "Rat Snake", "Rat", 1112222)
+tiny = Anaconda("Tiny", "Anaconda", "Rabbit", 1917324784)
+hugs = Python("Hugs", "Python", "Rabbit", 12298766)
+nebuchadnezzar = King_Cobra("Nebuchadnezzar", "King Cobra", "Mice", 121233333)
 
 ## Wetlands ##
-tricks = Catfish("Tricks", "Catfish", "Catfood")
-froggy = Frog("Froggy", "Frog", "Frog Legs")
-daffy = Mallard("Daffy", "Mallard", "Bread")
-willy = Goldfish("Willy", "Goldfish", "Fish Flakes")
-cuddles = Alligator("Cuddles", "Alligator", "Chicken")
+tricks = Catfish("Tricks", "Catfish", "Catfood", 323232323)
+froggy = Frog("Froggy", "Frog", "Frog Legs", 9987766)
+daffy = Mallard("Daffy", "Mallard", "Bread", 8767565422)
+willy = Goldfish("Willy", "Goldfish", "Fish Flakes", 876756545)
+cuddles = Alligator("Cuddles", "Alligator", "Chicken", 98765665)
 
 ## Create Attractions ##
 varmint_village = PettingZoo("Varmint Village")
@@ -54,13 +54,14 @@ wetlands.add_animal(cuddles)
 rosco.feed()
 frosty.feed()
 bella.feed()
+rusty.feed()
 
 ##Print Attraction Report##
 attraction_report(varmint_village, snake_pit, wetlands)
 
 ##Test for Getter and Setter##
-rosco.chip_number = 444444
-print(rosco.chip_number)
+rosco.chip_num = 4444444
+print(rosco.chip_num)
 
 ##Newest Animals##
 print(varmint_village.last_critter_added)
