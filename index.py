@@ -1,6 +1,7 @@
 from attractions import *
 from animals import *
-
+from movements import *
+from animals import Donkey, Lion, Animal, Lama, Alligator, Anaconda, Catfish, Copperhead, Frog, Goat, Goldfish, King_Cobra, Mallard, Monkey, Python, Rat_Snake
 ## Create Animals ##
 ## Varmint Village ##
 frosty = Donkey("Frosty", "Donkey", "Midday", "Hay", 19378387)
@@ -8,7 +9,6 @@ rosco = Lama("Rosco", "Lama", "Morning", "Lama Chow", 123456)
 bella = Goat("Bella", "Goat", "Evening", "GoatMeal", 101893843)
 bill = Monkey("Bill", "Monkey", "Morning", "Nuts", 1924747)
 nasty = Lion("Nasty", "Lion", "Midday", "Chicken", 129305854)
-
 ## Snake Pit ##
 rusty = Copperhead("Rusty", "Copperhead", "Mice", 1212)
 ratty = Rat_Snake("Ratty", "Rat Snake", "Rat", 1112222)
@@ -24,9 +24,9 @@ willy = Goldfish("Willy", "Goldfish", "Fish Flakes", 876756545)
 cuddles = Alligator("Cuddles", "Alligator", "Chicken", 98765665)
 
 ## Create Attractions ##
-varmint_village = PettingZoo("Varmint Village")
-snake_pit = SnakePit("The Snake Pit")
-wetlands = Wetlands("The Wetlands")
+varmint_village = PettingZoo("Varmint Village", "cute and cuddly critters to cuddle with!")
+snake_pit = SnakePit("The Snake Pit", "slimy friends that want to squeeze you!")
+wetlands = Wetlands("The Wetlands", "slippery water lovers to get wet with!")
 
 ## Add Animals to Attractions ##
 ## Add Varmints ##
@@ -57,6 +57,12 @@ bella.feed()
 rusty.feed()
 
 ##Print Attraction Report##
+def attraction_report (*attractions):
+    for attraction in attractions:
+        print(f'******CURRENT ANIMALS IN {attraction.attraction_name}******'.upper())
+        for animal in attraction.animals:
+            print(f'{animal.name} the {animal.species}')
+
 attraction_report(varmint_village, snake_pit, wetlands)
 
 ##Test for Getter and Setter##
