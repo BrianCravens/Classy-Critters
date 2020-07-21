@@ -35,6 +35,7 @@ varmint_village.add_animal(rosco)
 varmint_village.add_animal(bella)
 varmint_village.add_animal(bill)
 varmint_village.add_animal(nasty)
+varmint_village.add_animal(tricks)
 
 ## Add Snakes ##
 snake_pit.add_animal(rusty)
